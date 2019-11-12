@@ -96,11 +96,17 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
         Red virtual
 
 2. ¿Brevemente describa para qué sirve cada recurso?
+
         * Cuenta de almacenamiento: Almacena datos en un disco virtual.
+	
         * Direccion IP publica: Para comunicarse con internet.
+	
         * Disco: Es la version virtualizada de la maquina que creamos, guarda el sistema operativo y otros componentes.
+	
         * Grupo de seguridad de red: Filtra el trafico de la red de la maquina.
+	
         * Interfaz de red: Permite a la maquina virtual comunicarse con recursos en internet.
+	
         * Red virtual: Red por donde opera la interfaz de red.
 
 
@@ -262,11 +268,24 @@ newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALAN
 	Los *address range* sirven para asignarle un rago a la *Subnet*.
 
 * ¿Qué son las *Availability Zone* y por qué seleccionamos 3 diferentes zonas?. ¿Qué significa que una IP sea *zone-redundant*?
-
+	
 	
 
 * ¿Cuál es el propósito del *Network Security Group*?
 * Informe de newman 1 (Punto 2)
+
+	* Resultados Escalabilidad Vertical
+	
+	![cpu](images/resumen1.PNG)
+	![cpu](images/resumen2.PNG)
+	
+	* Resultados Escalabilidad Horizontal
+	
+	![cpu](images/parte2.1.PNG)
+	![cpu](images/parte2.2.PNG)
+	
+En la ejecución con Escabilidad Horizontal se presento un error, además de que la primera petición en la primera iteración duro más de lo habitual, a diferencia de la Escabilidad Vertical donde no se presentaron errores. Aunque los tiempos de las demas peticiones con Escabilidad Horizontal tuvieron un mejor rendimiento como se observa en la segunda iteración.
+
 * Presente el Diagrama de Despliegue de la solución.
 
 
