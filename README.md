@@ -253,9 +253,18 @@ newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALAN
 
 * ¿Qué es una *Virtual Network*? ¿Qué es una *Subnet*? ¿Para qué sirven los *address space* y *address range*?
 	
+	Una *Virtual Network* es una red que simula una red física y es una combinación de recursos de red de hardware y software. Una red virtual es el producto final de la virtualización de red.
 	
+	Una *Subnet* es una division lógica de una IP de red.
+	
+	Los *address space* sirven para asignarle un rango a la *Virtual Network*.
+	
+	Los *address range* sirven para asignarle un rago a la *Subnet*.
 
 * ¿Qué son las *Availability Zone* y por qué seleccionamos 3 diferentes zonas?. ¿Qué significa que una IP sea *zone-redundant*?
+
+	
+
 * ¿Cuál es el propósito del *Network Security Group*?
 * Informe de newman 1 (Punto 2)
 * Presente el Diagrama de Despliegue de la solución.
