@@ -229,10 +229,32 @@ newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALAN
 **Preguntas**
 
 * ¿Cuáles son los tipos de balanceadores de carga en Azure y en qué se diferencian?, ¿Qué es SKU, qué tipos hay y en qué se diferencian?, ¿Por qué el balanceador de carga necesita una IP pública?
+
+	Azure ofrece dos tipos de balanceadores de carga:
+	Público: Balancea el tráfico que entre a las maquinas virtuales, necesitad de una IP pública para que se pueda acceder a el.
+	Interno: Balancea el tráfico interno entre las maquinas virtuales, no necesita una IP pública, solo usa una privada.
+	
+	Stock-keeping unit o SKU, sin traducción literal al español podría denominarse «código de artículo» o «número de referencia».
+	Al momento de crear un balanceador de carga se nos ofecen dos tipos de SKU el basico y el estandar. El estandar ofrece más servicios que el básico como el soportar mas instancias,zonas de disponibilidad, mas operaciones por segundo, un balanceador de carga interno, entre otros.
+	
+
 * ¿Cuál es el propósito del *Backend Pool*?
+
+	Pueden contener máquinas virtuales independientes, conjuntos de disponibilidad o conjuntos de escalado de máquinas virtuales. También puede combinar recursos en el Backend Pool. Puede combinar hasta 150 recursos en el Backend Pool por recurso de Load Balancer.
+
 * ¿Cuál es el propósito del *Health Probe*?
+
+	El *Health Probe* es usado para determinar que maquinas virtuales estan disponibles y por lo tanto pueden recibir tráfico.
+
 * ¿Cuál es el propósito de la *Load Balancing Rule*? ¿Qué tipos de sesión persistente existen, por qué esto es importante y cómo puede afectar la escalabilidad del sistema?.
+
+	El *Load Balancing Rule* es usado para definir la configaracion del balanceador de carga, que puerto se va a usar, cual *Backend Pool*, cual *Health Probe*, entre otros. 
+	Los tipos de sesión persistente pueden ser Ninguno, Client IP o Client IP y protocolo, esto es importante porque especifica de que forma se va responder varias peticiones de un mismo cliente, puede afectar la escalabilidad del sistema en el momento que se le asigne la misma maquina a un cliente y esta pueda presentar fallos.
+
 * ¿Qué es una *Virtual Network*? ¿Qué es una *Subnet*? ¿Para qué sirven los *address space* y *address range*?
+	
+	
+
 * ¿Qué son las *Availability Zone* y por qué seleccionamos 3 diferentes zonas?. ¿Qué significa que una IP sea *zone-redundant*?
 * ¿Cuál es el propósito del *Network Security Group*?
 * Informe de newman 1 (Punto 2)
