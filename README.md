@@ -135,12 +135,33 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 
 7. ¿Cuál es la diferencia entre los tamaños `B2ms` y `B1ls` (no solo busque especificaciones de infraestructura)?
 
-    
+
 
 8. ¿Aumentar el tamaño de la VM es una buena solución en este escenario?, ¿Qué pasa con la FibonacciApp cuando cambiamos el tamaño de la VM?
+
+    No seria una buena solución, al hacer estos cambios la FibonacciApp deja de funcionar y se tiene que abrir nuevamente la conexion.
+
 9. ¿Qué pasa con la infraestructura cuando cambia el tamaño de la VM? ¿Qué efectos negativos implica?
+
+    Habra menos consumo de CPU debido al aumneto de esto pero esto implicaria gastos mas grandes.
+
 10. ¿Hubo mejora en el consumo de CPU o en los tiempos de respuesta? Si/No ¿Por qué?
+
+    El consumo de CPU disminuyo.
+
+    ![cpu](images/CPU2.PNG)
+
+    Los tiempos de respuesta no mejoraron mucho.
+
+    ![cpu](images/resumen2.1.PNG)
+
+    ![cpu](images/resumen2.2.PNG)
+
+    Esto se da porque solo estamos aumentando la CPU de tamaño, solo se estan cambiando los recursos, pero se sigue accediendo a ellos de la misma manera.
+
 11. Aumente la cantidad de ejecuciones paralelas del comando de postman a `4`. ¿El comportamiento del sistema es porcentualmente mejor?
+
+    El comportamiento del sistema sigue siendo el mismo.
 
 ### Parte 2 - Escalabilidad horizontal
 
