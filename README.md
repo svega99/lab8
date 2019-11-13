@@ -96,11 +96,17 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
         Red virtual
 
 2. ¿Brevemente describa para qué sirve cada recurso?
+
         * Cuenta de almacenamiento: Almacena datos en un disco virtual.
+	
         * Direccion IP publica: Para comunicarse con internet.
+	
         * Disco: Es la version virtualizada de la maquina que creamos, guarda el sistema operativo y otros componentes.
+	
         * Grupo de seguridad de red: Filtra el trafico de la red de la maquina.
+	
         * Interfaz de red: Permite a la maquina virtual comunicarse con recursos en internet.
+	
         * Red virtual: Red por donde opera la interfaz de red.
 
 
@@ -250,13 +256,57 @@ newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALAN
 **Preguntas**
 
 * ¿Cuáles son los tipos de balanceadores de carga en Azure y en qué se diferencian?, ¿Qué es SKU, qué tipos hay y en qué se diferencian?, ¿Por qué el balanceador de carga necesita una IP pública?
+
+	Azure ofrece dos tipos de balanceadores de carga:
+	Público: Balancea el tráfico que entre a las maquinas virtuales, necesitad de una IP pública para que se pueda acceder a el.
+	Interno: Balancea el tráfico interno entre las maquinas virtuales, no necesita una IP pública, solo usa una privada.
+	
+	Stock-keeping unit o SKU, sin traducción literal al español podría denominarse «código de artículo» o «número de referencia».
+	Al momento de crear un balanceador de carga se nos ofecen dos tipos de SKU el basico y el estandar. El estandar ofrece más servicios que el básico como el soportar mas instancias,zonas de disponibilidad, mas operaciones por segundo, un balanceador de carga interno, entre otros.
+	
+
 * ¿Cuál es el propósito del *Backend Pool*?
+
+	Pueden contener máquinas virtuales independientes, conjuntos de disponibilidad o conjuntos de escalado de máquinas virtuales. También puede combinar recursos en el Backend Pool. Puede combinar hasta 150 recursos en el Backend Pool por recurso de Load Balancer.
+
 * ¿Cuál es el propósito del *Health Probe*?
+
+	El *Health Probe* es usado para determinar que maquinas virtuales estan disponibles y por lo tanto pueden recibir tráfico.
+
 * ¿Cuál es el propósito de la *Load Balancing Rule*? ¿Qué tipos de sesión persistente existen, por qué esto es importante y cómo puede afectar la escalabilidad del sistema?.
+
+	El *Load Balancing Rule* es usado para definir la configaracion del balanceador de carga, que puerto se va a usar, cual *Backend Pool*, cual *Health Probe*, entre otros. 
+	Los tipos de sesión persistente pueden ser Ninguno, Client IP o Client IP y protocolo, esto es importante porque especifica de que forma se va responder varias peticiones de un mismo cliente, puede afectar la escalabilidad del sistema en el momento que se le asigne la misma maquina a un cliente y esta pueda presentar fallos.
+
 * ¿Qué es una *Virtual Network*? ¿Qué es una *Subnet*? ¿Para qué sirven los *address space* y *address range*?
+	
+	Una *Virtual Network* es una red que simula una red física y es una combinación de recursos de red de hardware y software. Una red virtual es el producto final de la virtualización de red.
+	
+	Una *Subnet* es una division lógica de una IP de red.
+	
+	Los *address space* sirven para asignarle un rango a la *Virtual Network*.
+	
+	Los *address range* sirven para asignarle un rago a la *Subnet*.
+
 * ¿Qué son las *Availability Zone* y por qué seleccionamos 3 diferentes zonas?. ¿Qué significa que una IP sea *zone-redundant*?
+	
+	
+
 * ¿Cuál es el propósito del *Network Security Group*?
 * Informe de newman 1 (Punto 2)
+
+	* Resultados Escalabilidad Vertical
+	
+	![cpu](images/resumen1.PNG)
+	![cpu](images/resumen2.PNG)
+	
+	* Resultados Escalabilidad Horizontal
+	
+	![cpu](images/parte2.1.PNG)
+	![cpu](images/parte2.2.PNG)
+	
+En la ejecución con Escabilidad Horizontal se presento un error, además de que la primera petición en la primera iteración duro más de lo habitual, a diferencia de la Escabilidad Vertical donde no se presentaron errores. Aunque los tiempos de las demas peticiones con Escabilidad Horizontal tuvieron un mejor rendimiento como se observa en la segunda iteración.
+
 * Presente el Diagrama de Despliegue de la solución.
 
 
