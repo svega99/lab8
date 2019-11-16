@@ -97,12 +97,12 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 
 2. ¿Brevemente describa para qué sirve cada recurso?
 
-        * Cuenta de almacenamiento: Almacena datos en un disco virtual.
-        * Direccion IP publica: Para comunicarse con internet.
-        * Disco: Es la version virtualizada de la maquina que creamos, guarda el sistema operativo y otros componentes.
-        * Grupo de seguridad de red: Filtra el trafico de la red de la maquina.
-        * Interfaz de red: Permite a la maquina virtual comunicarse con recursos en internet.
-        * Red virtual: Red por donde opera la interfaz de red.
+    * Cuenta de almacenamiento: Almacena datos en un disco virtual.
+    * Direccion IP publica: Para comunicarse con internet.
+    * Disco: Es la version virtualizada de la maquina que creamos, guarda el sistema operativo y otros componentes.
+    * Grupo de seguridad de red: Filtra el trafico de la red de la maquina.
+    * Interfaz de red: Permite a la maquina virtual comunicarse con recursos en internet.
+    * Red virtual: Red por donde opera la interfaz de red.
 
 
 3. ¿Al cerrar la conexión ssh con la VM, por qué se cae la aplicación que ejecutamos con el comando `npm FibonacciApp.js`? ¿Por qué debemos crear un *Inbound port rule* antes de acceder al servicio?
