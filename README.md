@@ -98,15 +98,10 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 2. ¿Brevemente describa para qué sirve cada recurso?
 
         * Cuenta de almacenamiento: Almacena datos en un disco virtual.
-	
         * Direccion IP publica: Para comunicarse con internet.
-	
         * Disco: Es la version virtualizada de la maquina que creamos, guarda el sistema operativo y otros componentes.
-	
         * Grupo de seguridad de red: Filtra el trafico de la red de la maquina.
-	
         * Interfaz de red: Permite a la maquina virtual comunicarse con recursos en internet.
-	
         * Red virtual: Red por donde opera la interfaz de red.
 
 
@@ -290,9 +285,14 @@ newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALAN
 
 * ¿Qué son las *Availability Zone* y por qué seleccionamos 3 diferentes zonas?. ¿Qué significa que una IP sea *zone-redundant*?
 	
+	Las *Availability Zone* son ubicaciones físicas exclusivas dentro de una región de Azure. Cada zona de disponibilidad consta de uno o varios centros de datos equipados con alimentación, refrigeración y redes independientes. Seleccionamos 3 para cada una de las maquinas virtuales que creamos. 
 	
+	Que una IP sea *zone-redundant* significa que servira con cualquiera de las zonas, lo que evitara fallos si una de las zonas presenta algun error.
 
 * ¿Cuál es el propósito del *Network Security Group*?
+
+	El *Network Security Group* sirve para crear reglas de seguridad que seran usadas por mas de una misma red.
+
 * Informe de newman 1 (Punto 2)
 
 	* Resultados Escalabilidad Vertical
